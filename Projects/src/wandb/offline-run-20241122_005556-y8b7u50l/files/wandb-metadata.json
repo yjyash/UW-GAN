@@ -1,0 +1,34 @@
+{
+  "os":  "Windows-10-10.0.19045-SP0",
+  "python":  "3.11.10",
+  "startedAt":  "2024-11-21T19:25:56.586518Z",
+  "args":  [
+    "--config",
+    "configs/config.yaml"
+  ],
+  "program":  "C:\\Users\\yjyas\\Projects\\src\\train.py",
+  "codePath":  "src\\train.py",
+  "git":  {
+    "remote":  "https://github.com/yjyash/GAN-Underwater.git"
+  },
+  "root":  "C:\\Users\\yjyas\\Projects\\src",
+  "host":  "DESKTOP-IDS4Q43",
+  "username":  "yjyas",
+  "executable":  "C:\\Users\\yjyas\\anaconda3\\envs\\project2\\python.exe",
+  "codePathLocal":  "train.py",
+  "cpu_count":  4,
+  "cpu_count_logical":  8,
+  "disk":  {
+    "/":  {
+      "total":  "202934267904",
+      "used":  "119478456320"
+    }
+  },
+  "memory":  {
+    "total":  "8480788480"
+  },
+  "cpu":  {
+    "count":  4,
+    "countLogical":  8
+  }
+}

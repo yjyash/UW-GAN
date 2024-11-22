@@ -1,0 +1,15 @@
+{"time":"2024-11-22T00:55:56.7975271+05:30","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-22T00:55:56.7975271+05:30","level":"INFO","msg":"created symlink","path":"C:\\Users\\yjyas\\Projects\\src\\wandb\\offline-run-20241122_005556-y8b7u50l\\logs\\debug-core.log"}
+{"time":"2024-11-22T00:55:57.7034887+05:30","level":"INFO","msg":"created new stream","id":"y8b7u50l"}
+{"time":"2024-11-22T00:55:57.7034887+05:30","level":"INFO","msg":"stream: started","id":"y8b7u50l"}
+{"time":"2024-11-22T00:55:57.7034887+05:30","level":"INFO","msg":"handler: started","stream_id":"y8b7u50l"}
+{"time":"2024-11-22T00:55:57.7034887+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"y8b7u50l"}
+{"time":"2024-11-22T00:55:57.7034887+05:30","level":"INFO","msg":"sender: started","stream_id":"y8b7u50l"}
+{"time":"2024-11-22T00:55:57.7210237+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-22T00:56:19.760075+05:30","level":"INFO","msg":"stream: closing","id":"y8b7u50l"}
+{"time":"2024-11-22T00:56:19.760075+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-22T00:56:19.7615502+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-22T00:56:19.7621124+05:30","level":"INFO","msg":"handler: closed","stream_id":"y8b7u50l"}
+{"time":"2024-11-22T00:56:19.7621124+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":"y8b7u50l"}
+{"time":"2024-11-22T00:56:19.7621124+05:30","level":"INFO","msg":"sender: closed","stream_id":"y8b7u50l"}
+{"time":"2024-11-22T00:56:19.7626368+05:30","level":"INFO","msg":"stream: closed","id":"y8b7u50l"}
