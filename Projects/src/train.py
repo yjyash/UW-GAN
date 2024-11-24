@@ -1,6 +1,6 @@
-from src.dataloader import get_dataloader
-from src.models.generator import Generator
-from src.models.discriminator import Discriminator
+from dataloader import get_dataloader
+from models.generator import Generator
+from models.discriminator import Discriminator
 import torch
 # import torch.optim as optim
 import torch.nn as nn
@@ -9,8 +9,8 @@ import yaml
 import sys
 import os
 from torch.optim import Adam
-from src.losses.gan_loss import GANLoss
-from src.dataloader import get_dataloader
+from losses.gan_loss import GANLoss
+from dataloader import get_dataloader
 import wandb
 from utils import log_losses, save_checkpoint, save_generated_images, calculate_metrics, display_metrics
 
@@ -77,7 +77,7 @@ def train():
 
             # if i % 10 == 0:
                 # wandb.log({"D_loss": d_loss.item(), "G_loss": g_loss.item()})
-                torchvision.utils.save_image(fake_imgs, f"C:\\Users\\yjyas\\Projects\\outputs/epoch_{epoch}_iter_{i}.png")
+                torchvision.utils.save_image(fake_imgs, f"/content/UW/Projects/outputs/epoch_{epoch}_iter_{i}.png")
 
                 print(f"Epoch {epoch}, Iter {i}, G_Loss: {g_loss.item()}, D_Loss: {d_loss.item()}")
             psnr, ssim = calculate_metrics(target_imgs, fake_imgs)

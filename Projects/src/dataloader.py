@@ -1,6 +1,6 @@
 from torch.utils.data import DataLoader
 from torchvision import transforms
-from src.dataset import PairedImageDataset
+from dataset import PairedImageDataset
 import yaml
 
 def get_dataloader(config_path):
