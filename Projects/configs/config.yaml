@@ -5,7 +5,7 @@ model:
   lambda_l1: 100.0
 
 data:
-  dataset_path: "dataset\\"
+  dataset_path: "/content/UW/Projects/dataset"
   batch_size: 16
   image_size: 256
   num_workers: 4
@@ -16,16 +16,16 @@ training:
 
 train:
   lr: 0.0001
-  num_epochs: 100
+  num_epochs: 600
   batch_size: 4
   # lr: 0.0002
   epochs: 50
-  dataset_path: "dataset\\"
+  dataset_path: "/content/UW/Projects/dataset"
 
 
 
 # data:
-#   dataset_path: "./dataset"       # Path to your dataset folder
+#   dataset_path: "/content/UW/Projects/dataset"       # Path to your dataset folder
 #   image_size: 256                 # Resize all images to this size
 #   batch_size: 16                  # Number of images per training batch
 #   num_workers: 4                  # Number of parallel workers for data loading
