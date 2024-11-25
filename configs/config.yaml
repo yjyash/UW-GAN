@@ -5,7 +5,7 @@ model:
   lambda_l1: 100.0
 
 data:
-  dataset_path: "/content/UW/Projects/dataset"
+  dataset_path: "/content/UW/dataset"
   batch_size: 16
   image_size: 256
   num_workers: 4
@@ -20,7 +20,7 @@ train:
   batch_size: 4
   # lr: 0.0002
   epochs: 50
-  dataset_path: "/content/UW/Projects/dataset"
+  dataset_path: "/content/UW/dataset"
 
 
 

@@ -7,8 +7,8 @@ class PairedImageDataset(Dataset):
     def __init__(self, root_dir, transform, phase='train'):
         # print(root_dir)
     
-        self.input_dir = os.path.join("/content/UW/Projects",root_dir, phase, 'input')
-        self.target_dir = os.path.join("/content/UW/Projects",root_dir, phase, 'target')
+        self.input_dir = os.path.join("/content/UW",root_dir, phase, 'input')
+        self.target_dir = os.path.join("/content/UW",root_dir, phase, 'target')
         self.transform = transform
         # print(f"Input directory: {self.input_dir}")
         # print(f"Target directory: {self.target_dir}")
