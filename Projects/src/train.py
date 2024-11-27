@@ -14,6 +14,18 @@ from src.dataloader import get_dataloader
 import wandb
 from utils import log_losses, save_checkpoint, save_generated_images, calculate_metrics, display_metrics
 
+def save_checkpoint(generator, discriminator, epoch, optimizer_g, optimizer_d, checkpoint_dir="../checkpoints/"):
+    # Create directory if it doesn't exist
+    os.makedirs(checkpoint_dir, exist_ok=True)
+    
+    # Save the model weights and optimizer states
+    torch.save({
+        'epoch': epoch,
+        'generator_state_dict': generator.state_dict(),
+        'discriminator_state_dict': discriminator.state_dict(),
+        'optimizer_g_state_dict': optimizer_g.state_dict(),
+        'optimizer_d_state_dict': optimizer_d.state_dict(),
+    }, os.path.join(checkpoint_dir, f"epoch_{epoch}.pth"))
 
 def train():
         
@@ -37,7 +49,7 @@ def train():
 #     # Optimizers and loss setting -> done successfully
         optimizer_g = Adam(generator.parameters(), lr=config['train']['lr'], betas=(0.5, 0.999))
         optimizer_d = Adam(discriminator.parameters(), lr=config['train']['lr'], betas=(0.5, 0.999))
-        # loss_fn = nn.MSELoss()
+        loss_fn = nn.MSELoss()
         loss_fn = GANLoss()
 #     # Training loop -> done successfully
         num_epochs = config['train']['num_epochs']
@@ -58,7 +70,7 @@ def train():
                 real_validity = discriminator(target_imgs)
                 fake_imgs = generator(real_imgs).detach()
 
-                print(f"Fake Image Shape: {fake_imgs.shape}")
+                # print(f"Fake Image Shape: {fake_imgs.shape}")
 
                 fake_validity = discriminator(fake_imgs)
                 d_loss = loss_fn.discriminator_loss(real_validity, fake_validity)
@@ -77,12 +89,17 @@ def train():
 
             # if i % 10 == 0:
                 # wandb.log({"D_loss": d_loss.item(), "G_loss": g_loss.item()})
-                torchvision.utils.save_image(fake_imgs, f"C:\\Users\\yjyas\\Projects\\outputs/epoch_{epoch}_iter_{i}.png")
+                torchvision.utils.save_image(fake_imgs, f"../outputs/epoch_{epoch}_iter_{i}.png")
 
                 print(f"Epoch {epoch}, Iter {i}, G_Loss: {g_loss.item()}, D_Loss: {d_loss.item()}")
             psnr, ssim = calculate_metrics(target_imgs, fake_imgs)
             display_metrics(epoch, psnr, ssim)
             log_losses(epoch, i, epoch_g_loss / len(dataloader), epoch_d_loss / len(dataloader))
+
+            save_checkpoint(generator, discriminator, epoch, optimizer_g, optimizer_d)
+
+            # discriminator.save("discriminatorTrained.h5")
+            # generator.save("generatorTrained.h5")
 
 
 if __name__ == '__main__':
